@@ -16,6 +16,7 @@ public:
   void print(int);
   void printf();
 private:
+  void reduce();
   int numerator, denominator;
 };
 

@@ -1,6 +1,8 @@
 #include <iostream>
 #include "Fraction.h"
 using namespace std;
+// Victoria Valentina Marin Dominguez – A00836008
+// Héctor Marcelo Arroyo Morantte – A00837236
 
 int main() {
   Fraction f1(1,2);

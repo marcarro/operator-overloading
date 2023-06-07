@@ -1,8 +1,7 @@
 #include "Fraction.h"
 #include <numeric>
 #include <iostream>
-
-// TODO: a, b, f, g
+#include <string>
 
 Fraction::Fraction() {
   numerator = 0;
@@ -15,14 +14,16 @@ Fraction::Fraction(int numer, int denom) {
   this->reduce();
 }
 
-// a) sum
 Fraction operator+(Fraction lhs, const Fraction& rhs) {
-  // do stuff
+  int newNum = lhs.numerator* rhs.denominator + rhs.numerator * lhs.denominator;
+  int newDen = lhs.denominator * rhs.denominator;
+  return Fraction (newNum, newDen);
 }
 
-// b) subtract
 Fraction operator-(Fraction lhs, const Fraction& rhs) {
-  // do stuff
+  int newNum = lhs.numerator* rhs.denominator - rhs.numerator * lhs.denominator;
+  int newDen = lhs.denominator * rhs.denominator;
+  return Fraction (newNum, newDen);
 }
 
 Fraction operator*(Fraction lhs, const Fraction& rhs) {
@@ -55,14 +56,15 @@ void Fraction::print() {
   std::cout << numerator << "/" << denominator << "\n";
 }
 
-// f) print w spaces
-void Fraction::print(int) {
-  // do stuff
+void Fraction::print(int esp) {
+  int e = esp/2;
+  std :: string spaces (e,' ');
+  std :: cout << spaces << numerator << "/" << spaces << denominator << "\n";
 }
 
-// g) print in decimals
 void Fraction::printf() {
-  // do stuff
+  float decimal = static_cast<float> (numerator)/denominator;
+  std::cout << decimal << "\n";
 }
 
 void Fraction::reduce() {

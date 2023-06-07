@@ -13,7 +13,7 @@ public:
   friend bool operator>(const Fraction& lhs, const Fraction& rhs);
   friend bool operator==(const Fraction& lhs, const Fraction& rhs);
   void print();
-  void print(int);
+  void print(int esp);
   void printf();
 private:
   void reduce();
